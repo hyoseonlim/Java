@@ -1,6 +1,6 @@
 package lecture04;
 
-public class Average {
+class Average {
 	int numbers[] = new int[10];
 	int count = 0;
 
@@ -23,6 +23,9 @@ public class Average {
 		}
 		return (double)sum/count;
 	}
+}
+
+public class W4_3 {
 
 	public static void main(String[] args) {
 		Average avg = new Average();

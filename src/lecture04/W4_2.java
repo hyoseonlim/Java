@@ -1,6 +1,6 @@
 package lecture04;
 
-public class Cube {
+class Cube {
 	int width, depth, height;
 	
 	int getVolume() {
@@ -16,6 +16,9 @@ public class Cube {
 	boolean isZero() {
 		return getVolume() == 0;
 	}
+}
+
+public class W4_2 {
 
 	public static void main(String[] args) {
 		Cube cube = new Cube();   

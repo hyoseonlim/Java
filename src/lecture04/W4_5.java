@@ -2,8 +2,7 @@ package lecture04;
 
 import java.util.Scanner;
 
-public class Player {
-	
+class Player {
 	String name;
 	int score;
 	int difference;
@@ -32,6 +31,9 @@ public class Player {
 	int getDifference() {
 		return this.difference;
 	}
+}
+
+public class W4_5 {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);

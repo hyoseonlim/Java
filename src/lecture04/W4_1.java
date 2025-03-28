@@ -1,6 +1,6 @@
 package lecture04;
 
-public class TV {
+class TV {
 	String company;
 	int size;
 	int price;
@@ -8,6 +8,9 @@ public class TV {
 	void show() {
 		System.out.printf("%s에서 만든 %d만원짜리의 %d인치 TV", company, price, size);
 	}
+}
+
+public class W4_1 {
 
 	public static void main(String[] args) {
 		TV tv = new TV();
@@ -15,7 +18,6 @@ public class TV {
 		tv.size = 50;
 		tv.price = 300;
 		tv.show();
-
 	}
 
 }

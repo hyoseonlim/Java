@@ -2,8 +2,7 @@ package lecture04;
 
 import java.util.Scanner;
 
-public class Rectangle {
-	
+class Rectangle {
 	int width, length, area;
 
 	public Rectangle(int width, int length) {
@@ -23,6 +22,9 @@ public class Rectangle {
 	int getArea() {
 		return this.area;
 	}
+}
+
+public class W4_4 {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
