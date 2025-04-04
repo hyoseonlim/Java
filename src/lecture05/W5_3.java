@@ -1,49 +1,60 @@
 package lecture05;
 
 class IntVarList {
-	int[] numbers;	
-	int count = 0;
+	int[] values;
+	int index;
 	
-	public IntVarList(int[] values) {
-		numbers = new int[values.length * 2];
-		for(int value:values) {
-			numbers[count] = value;
-			count++;
+	IntVarList() {
+		values = new int[4];
+		index = 0;
+	}
+	
+	IntVarList(int n) {
+		values = new int[n];
+		index = 0;
+	}
+
+	IntVarList(int[] initial_values) {
+		values = new int[initial_values.length * 2];
+		for (int value : initial_values) 
+			put(value);
+	}
+
+
+	void put(int x) {
+		if (index == values.length) {
+			int[] temp = new int[values.length * 2];
+			for (int i = 0; i < index; i++)
+				temp[i] = values[i];
+			values = temp;
 		}
-	}
-	
-	 void put(int value) {
-		numbers[count] = value;
-		if(count < numbers.length -1) count++;
-		if(count == numbers.length -1) addStorage();
-	}
-	 
-	 void addStorage() {
-		 int temps[] = numbers;
-		 this.numbers = new int[numbers.length * 2];
-		 int cnt = 0;
-		 for(int temp:temps) {
-			 numbers[cnt] = temp;
-			 cnt++;
-		 }
-	 }
-	 
-	int pop(){
-		int last = numbers[count];
-		numbers[count] = 0;
-		count--;
-		return last;
+
+		values[index] = x;
+		index++;
 	}
 	
 	void show() {
-		for(int n: numbers) {
-			System.out.print(n + " ");
+		for (int i = 0; i < index; i++) {
+			System.out.print(values[i] + " ");
 		}
 		System.out.println();
+		
 	}
+	
+	double getAverage() {
+		
+		double sum = 0;
+		for (int i = 0; i < index; i++) {
+			sum += values[i];
+		}
+		return sum / index;
+	}
+	
 }
 
+
 public class W5_3 {
+
 	public static void main(String[] args) {
 		int[] initial_values = { 1, 2 };
 		IntVarList intVarList = new IntVarList(initial_values);
